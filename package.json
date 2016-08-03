@@ -1,0 +1,24 @@
+{
+  "name": "genealogia",
+  "version": "0.0.1",
+  "description": "register your family members and ancestors, and create your family tree",
+  "main": "index.html",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/fthebaud/genealogia.git"
+  },
+  "keywords": [
+    "genealogy",
+    "family",
+    "tree"
+  ],
+  "author": "Fabien Thebaud",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/fthebaud/genealogia/issues"
+  },
+  "homepage": "https://github.com/fthebaud/genealogia#readme"
+}
