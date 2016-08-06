@@ -8,7 +8,7 @@
   "src-not-empty": true,
   "attr-no-duplication": true,
   "title-require": true,
-  "attr-value-not-empty": true,
+  "attr-value-not-empty": false,
   "tag-self-close": true,
   "space-tab-mixed-disabled": "true",
   "alt-require": true

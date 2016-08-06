@@ -61,7 +61,7 @@ module.exports = {
     //'quote-props': ['warn', 'as-needed'],
     'indent': ['off', 2], //off : problem with arrays indentation
     'no-trailing-spaces': 'warn',
-    'space-before-function-paren': ['warn', 'never'],
+    'space-before-function-paren': ['warn', {"anonymous": "always", "named": "never"}],
     'space-in-parens': ['warn', 'never'],
     'yoda': ['warn', 'never'],
 

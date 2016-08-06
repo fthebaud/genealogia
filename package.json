@@ -18,7 +18,7 @@
   },
   "homepage": "https://github.com/fthebaud/genealogia#readme",
   "dependencies": {
-
+    "angular-route": "1.5.8"
   },
   "devDependencies": {
     "eslint-config-angular": "0.5.0",

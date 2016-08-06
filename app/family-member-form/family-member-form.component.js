@@ -1,3 +1,5 @@
+'use strict';
+
 // retreiving the family member form module
 angular.module('familyMemberForm')
   //register a component definition

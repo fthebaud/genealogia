@@ -1,18 +1,25 @@
 <!DOCTYPE html>
 <html ng-app="genealogia">
-  <head>
-    <meta charset="utf-8">
-    <title>genealogia</title>
-  </head>
-  <body>
 
-    <!-- custom component to render a simple "person" form -->
-    <family-member-form></family-member-form>
+    <head>
+        <meta charset="utf-8"/>
+        <title>genealogia</title>
+    </head>
 
+    <body>
 
-    <script src="./../node_modules/angular/angular.js"></script>
-    <script src="app/app.js"></script>
-    <script src="app/family-member-form/family-member-form.module.js"></script>
-    <script src="app/family-member-form/family-member-form.component.js"></script>
-  </body>
+        <!-- Turning index.html into a "layout template" -->
+        <div ng-view></div>
+
+        <!-- imports -->
+        <script src="../node_modules/angular/angular.js"></script>
+        <script src="../node_modules/angular-route/angular-route.js"></script>
+
+        <script src="app/app.module.js"></script>
+        <script src="app/app.config.js"></script>
+
+        <script src="app/family-member-form/family-member-form.module.js"></script>
+        <script src="app/family-member-form/family-member-form.component.js"></script>
+    </body>
+
 </html>
