@@ -9,3 +9,17 @@ body {
 p {
   color: white
 }
+
+form {
+  background-color: rgb(140, 137, 170);
+}
+
+label {
+  width: 140px;
+  display: inline-block;
+}
+
+input {
+  width: 200px;
+  margin-right: 40px;
+}
