@@ -10,7 +10,8 @@ module.exports = {
 
   env: {
     browser: true,
-    es6: true
+    es6: true,
+    node: true
   },
 
   globals: {
@@ -67,6 +68,7 @@ module.exports = {
 
     //angular specific
     'angular/di': [2,"array"],
-    'angular/controller-as-vm': 0
+    'angular/controller-as-vm': 0,
+    'angular/log': 0
   }
 }

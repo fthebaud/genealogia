@@ -1,11 +1,11 @@
 # genealogia
 
-blalblabla
-more blalblabla
+Genealogy application.
+Made with the MEAN stack.
 
 ## commands
 
-starting the server (http://localhost;8000)
+starting the server (http://localhost:8000)
 
 `npm start`
 
