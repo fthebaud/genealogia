@@ -1,18 +1,18 @@
 <form>
-    <label>Nom : </label><input type="text" ng-model="user.surname"/>
+    <label>Nom : </label><input type="text" ng-model="personForm.data.surname"/>
     <br/>
-    <label>1er prénom : </label><input type="text" ng-model="user.name1"/>
-    <label>2ème prénom : </label><input type="text" ng-model="user.name2"/>
-    <label>3ème prénom : </label><input type="text" ng-model="user.name3"/>
+    <label>1er prénom : </label><input type="text" ng-model="personForm.data.name1"/>
+    <label>2ème prénom : </label><input type="text" ng-model="personForm.data.name2"/>
+    <label>3ème prénom : </label><input type="text" ng-model="personForm.data.name3"/>
     <br/>
-    <label>Date de naissance : </label><input type="text" ng-model="user.birthdate"/>
-    <label>Lieu de naissance : </label><input type="text" ng-model="user.birthplace"/>
+    <label>Date de naissance : </label><input type="text" ng-model="personForm.data.birthdate"/>
+    <label>Lieu de naissance : </label><input type="text" ng-model="personForm.data.birthplace"/>
     <br/>
-    <label>Date de décès : </label><input type="text" ng-model="user.deathdate"/>
-    <label>Lieu de décès : </label><input type="text" ng-model="user.deathplace"/>
+    <label>Date de décès : </label><input type="text" ng-model="personForm.data.deathdate"/>
+    <label>Lieu de décès : </label><input type="text" ng-model="personForm.data.deathplace"/>
     <br/>
     <div class="button">
-      <button type="submit">Reset !</button>
-      <button type="submit">submit !</button>
+      <button type="button" ng-click="personForm.reset()">Reset !</button>
+      <button type="submit" ng-click="personForm.save(personForm)">submit !</button>
     </div>
 </form>
