@@ -20,7 +20,7 @@ module.exports = {
   rules: {
     //Possible errors
     'comma-dangle': 'warn',
-    'no-console': 'warn',
+    'no-console': 'off',
     'no-debugger': 'warn',
     'no-extra-semi': 'warn',
     'no-extra-parens': ['warn', 'functions'],
