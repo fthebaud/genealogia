@@ -5,16 +5,12 @@ module.exports = {
 
   parserOptions: {
     ecmaVersion: 6,
-    sourceType: 'script'
+    sourceType: 'modules'
   },
 
   env: {
-    browser: true,
     es6: true,
     node: true
-  },
-
-  globals: {
   },
 
   rules: {
@@ -55,7 +51,8 @@ module.exports = {
     'no-mixed-spaces-and-tabs': 'warn',
     'new-cap': ['warn', {
       'newIsCap': true,
-      'capIsNew': true
+      'capIsNew': true,
+      'capIsNewExceptions': ['Router']
     }],
     'semi': 'warn',
     'quotes': ['warn', 'single', {'avoidEscape': true, 'allowTemplateLiterals': true}],
@@ -64,11 +61,6 @@ module.exports = {
     'no-trailing-spaces': 'warn',
     'space-before-function-paren': ['warn', {"anonymous": "always", "named": "never"}],
     'space-in-parens': ['warn', 'never'],
-    'yoda': ['warn', 'never'],
-
-    //angular specific
-    'angular/di': [2,"array"],
-    'angular/controller-as-vm': 0,
-    'angular/log': 0
+    'yoda': ['warn', 'never']
   }
 }

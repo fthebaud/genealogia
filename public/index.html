@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html ng-app="genealogia">
+
+<head>
+    <meta charset="utf-8" />
+    <title>genealogia</title>
+    <!-- import CSS -->
+    <!-- import bootstrap -->
+    <link rel="stylesheet" type="text/css" href="node_modules/bootstrap/dist/css/bootstrap.css" media="screen" />
+    <!-- import css perso -->
+    <link rel="stylesheet" type="text/css" href="css/style.css" media="screen" />
+</head>
+
+<body>
+
+    <div class="container">
+        <div class="jumbotron">
+            GENEALOGIA
+        </div>
+        <br/>
+        <!-- Turning index.html into a "layout template" -->
+        <div ng-view></div>
+    </div>
+
+    <!-- imports JS -->
+    <!-- import framework angular -->
+    <script src="node_modules/angular/angular.js"></script>
+    <script src="node_modules/angular-route/angular-route.js"></script>
+    <!-- imports configuration angular application -->
+    <script src="app.module.js"></script>
+    <script src="app.config.js"></script>
+    <!-- imports modules / composants angular -->
+    <script src="family-member-form/family-member-form.module.js"></script>
+    <script src="family-member-form/family-member-form.component.js"></script>
+</body>
+
+</html>

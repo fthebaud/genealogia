@@ -21,17 +21,13 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 
 // app.use() : mounts a specified middleware function at a specified path.
+// middleware functions is a way to do something before a request is processed
 // no path or "/" = function executed for every request
 // express.static() : only built-in middleware function of express. Serves static files from a path
 // __dirname : directory in which the currently executing script resides
-app.use('/', express.static(__dirname + '/'));
+app.use('/', express.static(__dirname + '/public'));
+app.use('/node_modules', express.static(__dirname + '/node_modules'));
 
-
-// router for the family-member API
-var personRouter = express.Router();
-
-personRouter.all('*', function (req, res) {
-  res.send('YOLO');
-});
-
+//importing router for person API
+let personRouter = require('./routes/personRouter');
 app.use('/person', personRouter);

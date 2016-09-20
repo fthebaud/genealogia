@@ -4,9 +4,9 @@
 angular.module('familyMemberForm')
   //register a component definition
   .component('familyMemberForm', {
-    templateUrl: 'app/family-member-form/family-member-form.template.html',
-    controller: ['$log', '$http', function PersonFormController($log, $http) {
-
+    templateUrl: 'family-member-form/family-member-form.template.html',
+    controller:  ['$http', function PersonFormController($log, $http) {
+      //TODO : eslint should give an error for the angular/di rule
       this.reset = function () {
         $log.debug('reset');
         this.data = {};
@@ -18,6 +18,7 @@ angular.module('familyMemberForm')
           url: '/someUrl',
           data: this.data
         }).then(function successCallback(response) {
+          console.log('test');
           // this callback will be called asynchronously
           // when the response is available
         }, function errorCallback(response) {
