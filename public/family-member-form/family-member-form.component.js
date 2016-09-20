@@ -5,8 +5,7 @@ angular.module('familyMemberForm')
   //register a component definition
   .component('familyMemberForm', {
     templateUrl: 'family-member-form/family-member-form.template.html',
-    //TODO : eslint should give an error for the angular/di rule
-    controller:  ['$http', function PersonFormController($log, $http) {
+    controller:  ['$log', '$http', function PersonFormController($log, $http) {
       this.reset = function () {
         $log.debug('reset');
         this.data = {};

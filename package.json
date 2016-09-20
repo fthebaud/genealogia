@@ -1,7 +1,7 @@
 {
   "name": "genealogia",
   "version": "0.0.1",
-  "description": "register your family members and ancestors, and create your family tree",
+  "description": "Register your family members and ancestors, and create your family tree.",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/fthebaud/genealogia.git"
@@ -21,14 +21,13 @@
   "dependencies": {
     "angular": "1.5.8",
     "angular-route": "1.5.8",
-    "body-parser": "^1.15.2",
+    "body-parser": "1.15.2",
     "bootstrap": "3.3.7",
     "express": "4.14.0"
   },
   "devDependencies": {
     "eslint-config-angular": "0.5.0",
-    "eslint-plugin-angular": "1.4.1",
-    "eslint-plugin-html": "1.5.2"
+    "eslint-plugin-angular": "1.4.1"
   },
   "main": "express.js",
   "scripts": {
