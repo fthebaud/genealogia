@@ -1,17 +1,22 @@
 module.exports = {
+  // root of the eslint configuration
   root: true,
 
-  extends: ['eslint:recommended', 'eslint-config-angular'],
-
+  // parser options
   parserOptions: {
     ecmaVersion: 6,
     sourceType: 'modules'
   },
 
+  // environments : define a set of global variables
   env: {
     es6: true,
     node: true
   },
+
+  //extending shareable configs
+  extends: ['eslint:recommended'],
+
 
   rules: {
     //Possible errors

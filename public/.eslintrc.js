@@ -1,15 +1,15 @@
+// specifics for angular / html / javascript front
 module.exports = {
 
-  // specifics for angular / html / javascript front
+  extends: ['eslint-config-angular'],
 
   parserOptions: {
-    ecmaVersion: 6,
     sourceType: 'script'
   },
 
   env: {
-    es6: true,
-    browser: true
+    browser: true,
+    node: false
   },
 
   rules: {
