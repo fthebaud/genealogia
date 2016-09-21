@@ -13,13 +13,6 @@ let port = process.env.port || 8000;
 console.log(`listenning on port ${port}`);
 app.listen(port);
 
-
-// configuring app to use body-parser. No path : it will be called on every request
-// bodyParser.urlencode() : parses url-encoded bodies
-// bodyParser.json() : parses json bodies
-app.use(bodyParser.urlencoded({ extended: true }));
-app.use(bodyParser.json());
-
 // app.use() : mounts a specified middleware function at a specified path.
 // middleware functions is a way to do something before a request is processed
 // no path or "/" = function executed for every request
@@ -28,6 +21,13 @@ app.use(bodyParser.json());
 app.use('/', express.static(__dirname + '/public'));
 app.use('/node_modules', express.static(__dirname + '/node_modules'));
 
+
+// configuring app to use body-parser. No path : it will be called on every request
+// bodyParser.urlencode() : parses url-encoded bodies
+// bodyParser.json() : parses json bodies
+app.use(bodyParser.urlencoded({ extended: true }));
+app.use(bodyParser.json());
+
 //importing router for person API
 let personRouter = require('./routes/personRouter');
-app.use('/person', personRouter);
+app.use('/api/person', personRouter);
