@@ -6,23 +6,21 @@ angular.module('familyMemberForm')
   .component('familyMemberForm', {
     templateUrl: 'family-member-form/family-member-form.template.html',
     controller:  ['$log', '$http', function PersonFormController($log, $http) {
+      //RESET
       this.reset = function () {
         $log.debug('reset');
         this.data = {};
       };
-
+      //SAVE
       this.save = function () {
         $http({
           method: 'POST',
-          url: '/someUrl',
+          url: '/api/person',
           data: this.data
         }).then(function successCallback(response) {
-          console.log('test');
-          // this callback will be called asynchronously
-          // when the response is available
+          $log('succes' + response);
         }, function errorCallback(response) {
-          // called asynchronously if an error occurs
-          // or server returns response with an error status.
+          $log('erreur' + response);
         });
       };
     }],
