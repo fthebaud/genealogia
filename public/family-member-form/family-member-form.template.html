@@ -1,4 +1,4 @@
-<form>
+<form class="transparent">
     <label>Nom : </label><input type="text" ng-model="personForm.data.surname"/>
     <br/>
     <label>1er prénom : </label><input type="text" ng-model="personForm.data.name1"/>
@@ -12,7 +12,7 @@
     <label>Lieu de décès : </label><input type="text" ng-model="personForm.data.deathplace"/>
     <br/>
     <div class="button">
-      <button type="button" ng-click="personForm.reset()">Reset !</button>
-      <button type="submit" ng-click="personForm.save(personForm)">submit !</button>
+      <button type="button" ng-click="personForm.reset()" class="btn btn-warning">Effacer</button>
+      <button type="submit" ng-click="personForm.save(personForm)" class="btn btn-success">enregistrer</button>
     </div>
 </form>

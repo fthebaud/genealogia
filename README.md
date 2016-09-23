@@ -16,7 +16,7 @@ The database is hosted on mongoLab (mlab.com, free "500Mb - single database sand
 The linter-eslint package (7.2.4) for Atom can't find the locally installed shareable configuration for angular linting.
 
 ### note on node-debbuger package for Atom
- - F5 will launch the debugger AND the application in debug mode AND will pause on the first line (F5 or "play" icon to resume). 
+ - F5 will launch the application in debug mode : the application is launched and the execution is stopped on the 1st instruction (--debug-brk). 
  - ctrl-F5 will debug the active file
 
 
