@@ -14,8 +14,12 @@ personRouter.use(function (req, res, next) {
   next();
 });
 
+/**
+ *  api/person/
+ */
 personRouter.route('/')
-  // CREATION OF ONE PERSON [POST http://<server>:<port>/api/person]
+
+  // CREATION OF ONE PERSON [POST http://<server>:<port>/api/persons]
   .post(function (req, res) {
     // create a new instance of the Person model
     var p = new Person();
@@ -25,13 +29,54 @@ personRouter.route('/')
     p.save(function (err) {
       if (err) {
         res.send(err);
-      }else{
+      }
+      else {
         res.json({
           message: 'Person created!'
         });
       }
     });
+  })
 
+  // GET ALL THE PERSONS [GET http://<server>:<port>/api/persons]
+  .get(function (req, res) {
+    Person.find(function (err, persons) {
+      if (err) {
+        res.send(err);
+      }
+      else {
+        res.json(persons);
+      }
+    });
   });
+
+
+/**
+ *  api/person/:person_id
+ */
+personRouter.route('/:person_id')
+
+  // GET ONE PERSON [GET http://<server>:<port>/api/persons/:person_id]
+  .get(function (req, res) {
+    Person.findById(req.params.person_id, function (err, person) {
+      if (err) {
+        res.send(err);
+      }else{
+        res.json(person);
+      }
+    });
+  })
+
+  // UDPATE ONE PERSONNE [PUT http://<server>:<port>/api/persons/:person_id]
+  .put(function (req, res) {
+      Person.findById(req.params.person_id, function (err, person) {
+        if (err) {
+          res.send(err);
+        }
+        else {
+          //TODO
+        }
+      });
+    });
 
 module.exports = personRouter;
