@@ -74,9 +74,34 @@ personRouter.route('/:person_id')
           res.send(err);
         }
         else {
-          //TODO
+          // On update l'objet
+          Object.assign(person, req.body);
+          // Puis on le sauvegarde
+          person.save(function (err) {
+            if (err) {
+              res.send(err);
+            } else {
+              res.json({message : 'person updated'});
+            }
+          });
         }
       });
+    })
+
+    // DELETE ONE PERSONNE [DELETE http://<server>:<port>/api/persons/:person_id]
+  .delete(function (req, res) {
+    Person.remove({
+      _id: req.params.person_id
+    }, function (err) {
+      if (err) {
+        res.send(err);
+      }
+      else {
+        res.json({
+          message: 'Successfully deleted'
+        });
+      }
     });
+  });
 
 module.exports = personRouter;
