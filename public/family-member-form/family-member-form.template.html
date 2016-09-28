@@ -1,18 +1,18 @@
 <form class="transparent">
-    <label>Nom : </label><input type="text" ng-model="personForm.data.surname"/>
+    <label>Nom : </label><input type="text" ng-model="PersonFormCtrl.data.surname"/>
     <br/>
-    <label>1er prénom : </label><input type="text" ng-model="personForm.data.name1"/>
-    <label>2ème prénom : </label><input type="text" ng-model="personForm.data.name2"/>
-    <label>3ème prénom : </label><input type="text" ng-model="personForm.data.name3"/>
+    <label>1er prénom : </label><input type="text" ng-model="PersonFormCtrl.data.name1"/>
+    <label>2ème prénom : </label><input type="text" ng-model="PersonFormCtrl.data.name2"/>
+    <label>3ème prénom : </label><input type="text" ng-model="PersonFormCtrl.data.name3"/>
     <br/>
-    <label>Date de naissance : </label><input type="text" ng-model="personForm.data.birthdate"/>
-    <label>Lieu de naissance : </label><input type="text" ng-model="personForm.data.birthplace"/>
+    <label>Date de naissance : </label><input type="text" ng-model="PersonFormCtrl.data.birthdate"/>
+    <label>Lieu de naissance : </label><input type="text" ng-model="PersonFormCtrl.data.birthplace"/>
     <br/>
-    <label>Date de décès : </label><input type="text" ng-model="personForm.data.deathdate"/>
-    <label>Lieu de décès : </label><input type="text" ng-model="personForm.data.deathplace"/>
+    <label>Date de décès : </label><input type="text" ng-model="PersonFormCtrl.data.deathdate"/>
+    <label>Lieu de décès : </label><input type="text" ng-model="PersonFormCtrl.data.deathplace"/>
     <br/>
     <div class="button">
-      <button type="button" ng-click="personForm.reset()" class="btn btn-warning">Effacer</button>
-      <button type="submit" ng-click="personForm.save(personForm)" class="btn btn-success">enregistrer</button>
+      <button type="button" ng-click="PersonFormCtrl.reset()" class="btn btn-warning">Effacer</button>
+      <button type="submit" ng-click="PersonFormCtrl.save(PersonFormCtrl)" class="btn btn-success">enregistrer</button>
     </div>
 </form>

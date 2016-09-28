@@ -19,13 +19,14 @@ app.listen(port);
 // no path or "/" = function executed for every request
 // express.static() : only built-in middleware function of express. Serves static files from a path
 // __dirname : directory in which the currently executing script resides
+// default directory index file : index.html
 app.use('/', express.static(__dirname + '/public'));
 app.use('/node_modules', express.static(__dirname + '/node_modules'));
 
 
 // configuring app to use body-parser (parsing of incoming requests). No path : it will be called on every request
-// bodyParser.urlencode() : parses url-encoded bodies
-// bodyParser.json() : parses json bodies
+// bodyParser.urlencode() : parses url-encoded bodies (x-www-form-urlencoded)
+// bodyParser.json() : parses json bodies (application/json)
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 

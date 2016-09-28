@@ -18,32 +18,41 @@
             GENEALOGIA
         </div>
 
-        <nav class="navbar navbar-default transparent">
+        <nav class="navbar navbar-default transparent" ng-controller="GenealogiaController">
             <ul class="nav navbar-nav">
-                <li class="active"><a href="#">Créer</a></li>
-                <li><a href="#">Rechercher</a></li>
-                <li><a href="#">Lier</a></li>
-                <li><a href="#">Visualiser</a></li>
+                <li ng-class="{ active: GenealogiaController.isActive('family-member-form') }">
+                  <a href="#/family-member-form">Créer</a>
+                </li>
+                <li ng-class="{ active: GenealogiaController.isActive('family-list') }">
+                  <a href="#/family-list">Rechercher</a>
+                </li>
+                <li>
+                  <a href="#">Lier</a>
+                </li>
+                <li>
+                  <a href="#">Visualiser</a>
+                </li>
             </ul>
         </nav>
 
-
-
         <br/>
+
         <!-- Turning index.html into a "layout template" -->
         <div ng-view></div>
+
     </div>
 
     <!-- imports JS -->
-    <!-- import framework angular -->
+    <!-- import angular framework -->
     <script src="node_modules/angular/angular.js"></script>
     <script src="node_modules/angular-route/angular-route.js"></script>
-    <!-- imports configuration angular application -->
-    <script src="app.module.js"></script>
-    <script src="app.config.js"></script>
-    <!-- imports modules / composants angular -->
-    <script src="family-member-form/family-member-form.module.js"></script>
+    <!-- import main module -->
+    <script src="genealogia.module.js"></script>
+    <!-- import angular application configuration -->
+    <script src="genealogia.config.js"></script>
+    <!-- import homemade component -->
     <script src="family-member-form/family-member-form.component.js"></script>
+    <script src="family-list/family-list.component.js"></script>
 </body>
 
 </html>

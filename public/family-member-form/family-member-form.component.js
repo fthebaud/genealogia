@@ -1,11 +1,11 @@
 'use strict';
 
-// retreiving the family member form module
-angular.module('familyMemberForm')
-  //register a component definition
+// retreiving the genealogia application module
+angular.module('genealogia')
+  // register a component definition. a component can be seen as a stripped down version of a directive
   .component('familyMemberForm', {
     templateUrl: 'family-member-form/family-member-form.template.html',
-    controller:  ['$log', '$http', function PersonFormController($log, $http) {
+    controller:  ['$log', '$http', function ($log, $http) {
       //RESET
       this.reset = function () {
         $log.debug('reset');
@@ -24,5 +24,5 @@ angular.module('familyMemberForm')
         });
       };
     }],
-    controllerAs: 'personForm'
+    controllerAs: 'PersonFormCtrl'
   });

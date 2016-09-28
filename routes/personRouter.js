@@ -1,10 +1,10 @@
 'use strict';
 
+// import express
 let express = require('express');
-let Person = require('../app/models/person');
-
-
+// création d'un routeur
 let personRouter = express.Router();
+
 
 // route middleware that will happen on every request
 personRouter.use(function (req, res, next) {
@@ -14,8 +14,15 @@ personRouter.use(function (req, res, next) {
   next();
 });
 
+
+// import du modèle Person
+let Person = require('../app/models/person');
+
+
 /**
+ *
  *  api/person/
+ *
  */
 personRouter.route('/')
 
@@ -52,7 +59,9 @@ personRouter.route('/')
 
 
 /**
+ *
  *  api/person/:person_id
+ *
  */
 personRouter.route('/:person_id')
 
@@ -104,4 +113,6 @@ personRouter.route('/:person_id')
     });
   });
 
+
+// export du router
 module.exports = personRouter;

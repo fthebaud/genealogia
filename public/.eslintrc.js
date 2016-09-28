@@ -14,6 +14,8 @@ module.exports = {
 
   rules: {
     //angular specific
-    'angular/log': 'warn'
+    'angular/log': 'warn',
+    'angular/di': ['warn',"array"],
+    'angular/controller-as-vm': 'off'
   }
 }
