@@ -18,12 +18,12 @@
             GENEALOGIA
         </div>
 
-        <nav class="navbar navbar-default transparent" ng-controller="GenealogiaController">
+        <nav class="navbar navbar-default transparent" ng-controller="GenealogiaController as genealogia">
             <ul class="nav navbar-nav">
-                <li ng-class="{ active: GenealogiaController.isActive('family-member-form') }">
+                <li ng-class="{ active: genealogia.isActive('/family-member-form') }">
                   <a href="#/family-member-form">Créer</a>
                 </li>
-                <li ng-class="{ active: GenealogiaController.isActive('family-list') }">
+                <li ng-class="{ active: genealogia.isActive('/family-list') }">
                   <a href="#/family-list">Rechercher</a>
                 </li>
                 <li>
@@ -50,7 +50,8 @@
     <script src="genealogia.module.js"></script>
     <!-- import angular application configuration -->
     <script src="genealogia.config.js"></script>
-    <!-- import homemade component -->
+    <!-- import homemade components -->
+    <script src="genealogia.component.js"></script>
     <script src="family-member-form/family-member-form.component.js"></script>
     <script src="family-list/family-list.component.js"></script>
 </body>

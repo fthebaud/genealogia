@@ -24,5 +24,5 @@ angular.module('genealogia')
         });
       };
     }],
-    controllerAs: 'PersonFormCtrl'
+    controllerAs: 'personForm'
   });
