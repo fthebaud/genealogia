@@ -18,6 +18,12 @@ angular.module('genealogia')
         .when('/family-list', {
           template: '<family-list></family-list>'
         })
+        .when('/family-relationship', {
+          template: '<family-relationship></family-relationship>'
+        })
+        .when('/family-tree', {
+          template: '<family-tree></family-tree>'
+        })
         .otherwise('/family-member-form');
     }]
   );

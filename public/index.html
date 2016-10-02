@@ -21,16 +21,16 @@
         <nav class="navbar navbar-default transparent" ng-controller="GenealogiaController as genealogia">
             <ul class="nav navbar-nav">
                 <li ng-class="{ active: genealogia.isActive('/family-member-form') }">
-                  <a href="#/family-member-form">Créer</a>
+                  <a href="#/family-member-form">Create a family member</a>
                 </li>
                 <li ng-class="{ active: genealogia.isActive('/family-list') }">
-                  <a href="#/family-list">Rechercher</a>
+                  <a href="#/family-list">Family list</a>
                 </li>
-                <li>
-                  <a href="#">Lier</a>
+                <li ng-class="{ active: genealogia.isActive('/family-relationship') }">
+                  <a href="#/family-relationship">Connecting famiy members</a>
                 </li>
-                <li>
-                  <a href="#">Visualiser</a>
+                <li ng-class="{ active: genealogia.isActive('/family-tree') }">
+                  <a href="#/family-tree">Family tree</a>
                 </li>
             </ul>
         </nav>
@@ -54,6 +54,8 @@
     <script src="genealogia.component.js"></script>
     <script src="family-member-form/family-member-form.component.js"></script>
     <script src="family-list/family-list.component.js"></script>
+    <script src="family-relationship/family-relationship.component.js"></script>
+    <script src="family-tree/family-tree.component.js"></script>
 </body>
 
 </html>
