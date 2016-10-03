@@ -10,20 +10,23 @@ angular.module('genealogia')
       // deactivated car refresh wasn't working any more...
       // $locationProvider.html5Mode(true);
 
-      //configuring routes: only one route for now!
+      //configuring routes
       $routeProvider
         .when('/family-member-form', {
-          template: '<family-member-form></family-member-form>'
+          template: ['<navbar></navbar>', '<family-member-form></family-member-form>']
         })
         .when('/family-list', {
-          template: '<family-list></family-list>'
+          template: ['<navbar></navbar>', '<family-list></family-list>']
         })
         .when('/family-relationship', {
-          template: '<family-relationship></family-relationship>'
+          template: ['<navbar></navbar>', '<family-relationship></family-relationship>']
         })
         .when('/family-tree', {
-          template: '<family-tree></family-tree>'
+          template: ['<navbar></navbar>', '<family-tree></family-tree>']
         })
-        .otherwise('/family-member-form');
+        .when('/login-screen', {
+          template: '<login-screen></login-screen>'
+        })
+        .otherwise('/login-screen');
     }]
   );

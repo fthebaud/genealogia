@@ -8,7 +8,7 @@
     <!-- import bootstrap -->
     <link rel="stylesheet" type="text/css" href="node_modules/bootstrap/dist/css/bootstrap.css" media="screen" />
     <!-- import css perso -->
-    <link rel="stylesheet" type="text/css" href="css/style.css" media="screen" />
+    <link rel="stylesheet" type="text/css" href="resources/css/style.css" media="screen" />
 </head>
 
 <body>
@@ -17,25 +17,6 @@
         <div class="jumbotron transparent title">
             GENEALOGIA
         </div>
-
-        <nav class="navbar navbar-default transparent" ng-controller="GenealogiaController as genealogia">
-            <ul class="nav navbar-nav">
-                <li ng-class="{ active: genealogia.isActive('/family-member-form') }">
-                  <a href="#/family-member-form">Create a family member</a>
-                </li>
-                <li ng-class="{ active: genealogia.isActive('/family-list') }">
-                  <a href="#/family-list">Family list</a>
-                </li>
-                <li ng-class="{ active: genealogia.isActive('/family-relationship') }">
-                  <a href="#/family-relationship">Connecting famiy members</a>
-                </li>
-                <li ng-class="{ active: genealogia.isActive('/family-tree') }">
-                  <a href="#/family-tree">Family tree</a>
-                </li>
-            </ul>
-        </nav>
-
-        <br/>
 
         <!-- Turning index.html into a "layout template" -->
         <div ng-view></div>
@@ -51,7 +32,8 @@
     <!-- import angular application configuration -->
     <script src="genealogia.config.js"></script>
     <!-- import homemade components -->
-    <script src="genealogia.component.js"></script>
+    <script src="login-screen/login-screen.component.js"></script>
+    <script src="navbar/navbar.component.js"></script>
     <script src="family-member-form/family-member-form.component.js"></script>
     <script src="family-list/family-list.component.js"></script>
     <script src="family-relationship/family-relationship.component.js"></script>
