@@ -4,9 +4,14 @@ angular.module('genealogia')
   .component('loginScreen', {
     templateUrl: 'login-screen/login-screen.template.html',
     controller: ['$location', '$log', function ($location, $log) {
-      this.login = function () {
-        $log.log('login');
+      this.signIn = function () {
+        $log.log('login!');
         $location.path('/family-member-form');
+      };
+
+      this.goToSignUp = function () {
+        $log.log('gotosignup');
+        $location.path('/sign-up');
       };
     }],
     controllerAs: 'loginCtrl'

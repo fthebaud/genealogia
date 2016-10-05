@@ -6,18 +6,18 @@
                     <h3 class="panel-title">Welcome to Genealogia</h3>
                 </div>
                 <div class="panel-body">
-                    <form role="form">
+                    <form role="form" ng-submit="loginCtrl.signIn()" novalidate>
                         <fieldset>
                             <div class="form-group">
-                                <input class="form-control" placeholder="E-mail" name="email" type="email" autofocus/>
+                                <input class="form-control" name="email" placeholder="E-mail" type="email" required autofocus/>
                             </div>
                             <div class="form-group">
-                                <input class="form-control" placeholder="Password" name="password" type="password" value=""/>
+                                <input class="form-control" name="password" placeholder="Password" value="" type="password" required/>
                             </div>
-                            <!-- Change this to a button or input when using this as a form -->
-                            <button type="button" class="btn btn-success btn-block" ng-click="loginCtrl.login()">Login</button>
+
+                            <button type="submit" class="btn btn-success btn-block">Login</button>
                             <br/>
-                            <p>New Member? <a href="signUp.html" class="">Sign up</a></p>
+                            <p>New Member? <a href="#/signup-screen" class="">Sign up</a></p>
                         </fieldset>
                     </form>
                 </div>

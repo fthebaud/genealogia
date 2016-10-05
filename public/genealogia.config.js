@@ -24,6 +24,9 @@ angular.module('genealogia')
         .when('/family-tree', {
           template: ['<navbar></navbar>', '<family-tree></family-tree>']
         })
+        .when('/signup-screen', {
+          template: '<signup-screen></signup-screen>'
+        })
         .when('/login-screen', {
           template: '<login-screen></login-screen>'
         })
