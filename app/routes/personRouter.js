@@ -16,7 +16,7 @@ personRouter.use(function (req, res, next) {
 
 
 // import person model
-let Person = require('../app/models/person');
+let Person = require('../models/person');
 
 
 /**

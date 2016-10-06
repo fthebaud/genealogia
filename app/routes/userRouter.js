@@ -9,7 +9,7 @@ userRouter.use(function (req, res, next) {
   next();
 });
 
-let User = require('../app/models/user');
+let User = require('../models/user');
 
 /**
  *

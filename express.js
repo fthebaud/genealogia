@@ -31,10 +31,10 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 
 //importing router for person API
-let personRouter = require('./routes/personRouter');
+let personRouter = require('./app/routes/personRouter');
 app.use('/api/persons', personRouter);
 
-let userRouter = require('./routes/userRouter');
+let userRouter = require('./app/routes/userRouter');
 app.use('/api/users', userRouter);
 
 //connecting ORM to database
