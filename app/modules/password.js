@@ -5,7 +5,7 @@ let crypto = require('crypto');
 /**
  * generates random string of characters i.e salt
  * @param  {number} length The length of the random string
- * @return {[type]}        [description]
+ * @return {string}        random string
  */
 function genRandomString(length) {
   return crypto.randomBytes(Math.ceil(length / 2))
@@ -15,9 +15,9 @@ function genRandomString(length) {
 
 /**
  * hash password with sha512
- * @param  {string} password [description]
- * @param  {string} salt     [description]
- * @return {[type]}          [description]
+ * @param  {string} password password to hash
+ * @param  {string} salt     word used for salting
+ * @return {string}          salted password
  */
 function sha512(password, salt) {
   var hash = crypto.createHmac('sha512', salt); /** Hashing algorithm sha512 */
@@ -30,12 +30,12 @@ function sha512(password, salt) {
 }
 
 /**
- * [saltHashPassword description]
- * @param  {[type]} userpassword [description]
- * @return {[type]}              [description]
+ * return the "salted" hash of a password
+ * @param  {[type]} userpassword password
+ * @return {[type]}              "salted" hash of the password
  */
 function saltHashPassword(userpassword) {
-  var salt = genRandomString(16); /** Gives us salt of length 16 */
+  var salt = genRandomString(16);
   return sha512(userpassword, salt);
 }
 
