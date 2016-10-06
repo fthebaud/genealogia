@@ -34,5 +34,8 @@ app.use(bodyParser.json());
 let personRouter = require('./routes/personRouter');
 app.use('/api/persons', personRouter);
 
+let userRouter = require('./routes/userRouter');
+app.use('/api/users', userRouter);
+
 //connecting ORM to database
 mongoose.connect('mongodb://admin:mongodb@ds035786.mlab.com:35786/database-genealogia');

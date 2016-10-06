@@ -12,7 +12,7 @@ angular.module('genealogia')
           $log.log('signup : ', this.data);
           $http({
               method: 'POST',
-              url: '/todolol',
+              url: '/api/users',
               headers: {
                 'Content-Type': 'application/x-www-form-urlencoded'
               },

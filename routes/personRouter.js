@@ -2,7 +2,7 @@
 
 // import express
 let express = require('express');
-// création d'un routeur
+// creation of a router
 let personRouter = express.Router();
 
 
@@ -15,13 +15,13 @@ personRouter.use(function (req, res, next) {
 });
 
 
-// import du modèle Person
+// import person model
 let Person = require('../app/models/person');
 
 
 /**
  *
- *  api/person/
+ *  api/persons/
  *
  */
 personRouter.route('/')
