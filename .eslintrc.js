@@ -36,9 +36,9 @@ module.exports = {
     'no-else-return': 'warn',
     'no-warning-comments': 'warn',
     //Best practices: complexity
-    'complexity': ['warn', 10],
-    'max-depth': ['warn', 3],
-    'max-params': ['warn', 7],
+    'complexity': ['warn', 6],
+    'max-depth': ['warn', 2],
+    'max-params': ['warn', 5],
 
     //variables
     'no-undef': 'warn',
