@@ -23,27 +23,23 @@ userRouter.route('/')
       email: req.body.email
     }, function (err, user) {
       if (err) {
-        console.log('erreur', err);
         res.send(err);
       }
       else {
         if (user) {
-          console.log('user already existe');
-          res.send('user already exist');
+          res.status(409).send('Conflict: user already exists.');
         }
         else {
           console.log('user creation: ', req.body);
           var u = new User();
           u.email = req.body.email;
-
+          // hash and salt password
           let password = require('../modules/password');
           let passwordData = password.saltHashPassword(req.body.password1);
           u.hash = passwordData.passwordHash;
           u.salt = passwordData.salt;
-
           u.save(function (err) {
             if (err) {
-              console.log('erreur', err);
               res.send(err);
             }
             else {
