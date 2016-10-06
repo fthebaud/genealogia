@@ -2,7 +2,7 @@
 
 angular.module('genealogia')
   .component('signupScreen', {
-    templateUrl: 'signup-screen/signup-screen.template.html',
+    templateUrl: 'components/signup-screen/signup-screen.template.html',
     controller: ['$http', '$httpParamSerializer', '$log', function ($http, $httpParamSerializer, $log) {
       this.submitted = false;
 

@@ -2,5 +2,5 @@
 
 angular.module('genealogia')
   .component('familyTree', {
-    templateUrl: 'family-tree/family-tree.template.html'
+    templateUrl: 'components/family-tree/family-tree.template.html'
   });

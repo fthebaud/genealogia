@@ -2,7 +2,7 @@
 
 angular.module('genealogia')
   .component('loginScreen', {
-    templateUrl: 'login-screen/login-screen.template.html',
+    templateUrl: 'components/login-screen/login-screen.template.html',
     controller: ['$location', '$log', function ($location, $log) {
       this.signIn = function () {
         $log.log('login!');
