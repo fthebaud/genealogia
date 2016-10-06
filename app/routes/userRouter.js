@@ -35,7 +35,12 @@ userRouter.route('/')
           console.log('user creation: ', req.body);
           var u = new User();
           u.email = req.body.email;
-          u.password = req.body.password1;
+
+          let password = require('../modules/password');
+          let passwordData = password.saltHashPassword(req.body.password1);
+          u.hash = passwordData.passwordHash;
+          u.salt = passwordData.salt;
+
           u.save(function (err) {
             if (err) {
               console.log('erreur', err);
