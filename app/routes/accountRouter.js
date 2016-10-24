@@ -3,7 +3,7 @@
 /*
  * Imports
  */
-let User = require('../models/user');
+let Account = require('../models/account');
 
 let responseHelper = require('../modules/helpers/responseHelper');
 let passwordHelper = require('../modules/helpers/passwordHelper');
@@ -15,38 +15,38 @@ let express = require('express');
 
 
 /*
- * userRouter
+ * accountRouter
  */
 
-let userRouter = express.Router();
-userRouter.use(function (req, res, next) {
-  console.log(`Received a call to user API, with parameters : method=${req.method}, url=${req.url}`);
+let accountRouter = express.Router();
+accountRouter.use(function (req, res, next) {
+  console.log(`Received a call to account API, with parameters : method=${req.method}, url=${req.url}`);
   next();
 });
 
 /**
  *
- * api/users/
+ * api/accounts/
  *
  */
-userRouter.route('/')
+accountRouter.route('/')
   // [POST]
-  // Create one user
+  // Create one account
   .post(function (req, res) {
     if (req.body.email && req.body.password1) {
-      User.findOne({
+      Account.findOne({
         email: req.body.email
-      }, function (err, user) {
+      }, function (err, account) {
         if (err) {
-          res.send(new ErrorMessage('error while checking if the user already exists', err));
+          res.send(new ErrorMessage('error while checking if the account already exists', err));
         }
         else {
-          if (user) {
-            res.status(409).send(new ErrorMessage('Conflict: user already exists.'));
+          if (account) {
+            res.status(409).send(new ErrorMessage('Conflict: account already exists.'));
           }
           else {
-            console.log('user creation: ', req.body);
-            var u = new User();
+            console.log('account creation: ', req.body);
+            var u = new Account();
             u.email = req.body.email;
             // hash and salt password
             let passwordData = passwordHelper.saltHashPassword(req.body.password1);
@@ -64,46 +64,46 @@ userRouter.route('/')
   })
 
   // [GET]
-  // Find all the users, or find one user filtered by email
+  // Find all the accounts, or find one account filtered by email
   .get(function (req, res) {
     if (req.query.email) {
-      User.findOne({
+      Account.findOne({
         email: req.query.email
-      }, function (err, user) {
-        responseHelper.sendBackErrorOrResult(err, user, res);
+      }, function (err, account) {
+        responseHelper.sendBackErrorOrResult(err, account, res);
       });
     } else {
-      User.find(function (err, users) {
-        responseHelper.sendBackErrorOrResult(err, users, res);
+      Account.find(function (err, accounts) {
+        responseHelper.sendBackErrorOrResult(err, accounts, res);
       });
     }
   });
 
 /**
  *
- *  api/users/:user_id
+ *  api/accounts/:account_id
  *
  */
-userRouter.route('/:user_id')
+accountRouter.route('/:account_id')
   // [GET]
-  // Find one user through is id
+  // Find one account through is id
   .get(function (req, res) {
-    User.findById(req.params.user_id, function (err, user) {
-      responseHelper.sendBackErrorOrResult(err, user, res);
+    Account.findById(req.params.account_id, function (err, account) {
+      responseHelper.sendBackErrorOrResult(err, account, res);
     });
   })
 
   // [DELETE]
-  // Delete one user through his id
+  // Delete one account through his id
   // TODO protect access to this method
   .delete(function (req, res) {
-    User.remove({
-      _id: req.params.user_id
+    Account.remove({
+      _id: req.params.account_id
     }, function (err) {
-      responseHelper.sendBackErrorOrResult(err, new Message('User successfully deleted'), res);
+      responseHelper.sendBackErrorOrResult(err, new Message('Account successfully deleted'), res);
     });
   });
 
 
 // export du router
-module.exports = userRouter;
+module.exports = accountRouter;

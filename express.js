@@ -5,6 +5,10 @@ let express = require('express');
 let bodyParser = require('body-parser');
 let mongoose = require('mongoose');
 
+let personRouter = require('./app/routes/personRouter');
+let accountRouter = require('./app/routes/accountRouter');
+
+
 // creating the express application
 let app = express();
 
@@ -30,12 +34,9 @@ app.use('/node_modules', express.static(__dirname + '/node_modules'));
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 
-//importing router for person API
-let personRouter = require('./app/routes/personRouter');
+//configuring routes for REST APIs
 app.use('/api/persons', personRouter);
-
-let userRouter = require('./app/routes/userRouter');
-app.use('/api/users', userRouter);
+app.use('/api/accounts', accountRouter);
 
 //connecting ORM to database
 mongoose.connect('mongodb://admin:mongodb@ds035786.mlab.com:35786/database-genealogia');

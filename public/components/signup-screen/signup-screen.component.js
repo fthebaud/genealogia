@@ -14,7 +14,7 @@ angular.module('genealogia')
             $log.log('signup : ', this.data);
             $http({
                 method: 'POST',
-                url: '/api/users',
+                url: '/api/accounts',
                 headers: {
                   'Content-Type': 'application/x-www-form-urlencoded'
                 },

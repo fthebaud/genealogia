@@ -31,12 +31,12 @@ function sha512(password, salt) {
 
 /**
  * return the "salted" hash of a password
- * @param  {[type]} userpassword password
+ * @param  {[type]} accountPassword password
  * @return {[type]}              "salted" hash of the password
  */
-function saltHashPassword(userpassword) {
+function saltHashPassword(accountPassword) {
   var salt = genRandomString(16);
-  return sha512(userpassword, salt);
+  return sha512(accountPassword, salt);
 }
 
 exports.saltHashPassword = saltHashPassword;
