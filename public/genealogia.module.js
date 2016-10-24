@@ -3,5 +3,6 @@
 // creating the main module
 angular.module('genealogia', [
   // which depends on ngRoute
-  'ngRoute'
+  'ngRoute',
+  'ui.bootstrap'
 ]);

@@ -6,8 +6,18 @@
                     <h3 class="panel-title">Welcome to Genealogia</h3>
                 </div>
                 <div class="panel-body">
+
+                    <div uib-alert ng-repeat="message in loginCtrl.messages" ng-class="'alert-' + (message.type || 'warning')" close="loginCtrl.closeMessage($index)">
+                        {{message.title}}
+                        {{message.detail}}
+                    </div>
+
                     <form role="form" ng-submit="loginCtrl.signIn()" novalidate>
                         <fieldset>
+
+                            <label class="bg-success" ng-show="loginCtrl.newAccount">
+                            Account successfully created.
+                            </label>
                             <div class="form-group">
                                 <input class="form-control" name="email" placeholder="E-mail" type="email" required autofocus/>
                             </div>

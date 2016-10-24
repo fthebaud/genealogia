@@ -53,7 +53,7 @@ userRouter.route('/')
             u.hash = passwordData.passwordHash;
             u.salt = passwordData.salt;
             u.save(function (err) {
-              responseHelper.sendBackErrorOrResult(err, new Message('user Successfully created'), res);
+              responseHelper.sendBackErrorOrResult(err, new Message('Account successfully created'), res);
             });
           }
         }
