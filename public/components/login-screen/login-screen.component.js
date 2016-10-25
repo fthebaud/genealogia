@@ -7,7 +7,6 @@ angular.module('genealogia')
       function ($location, $routeParams, $log, messageService) {
         //Gestion de l'affichage des alertes sur création d'un nouveau compte
         this.messages = messageService.getMessages();
-
         this.closeMessage = function (index) {
           messageService.closeMessage(index);
           this.messages = messageService.getMessages();
@@ -18,10 +17,6 @@ angular.module('genealogia')
           $location.path('/family-member-form');
         };
 
-        this.goToSignUp = function () {
-          $log.log('gotosignup');
-          $location.path('/sign-up');
-        };
       }
     ],
     controllerAs: 'loginCtrl'

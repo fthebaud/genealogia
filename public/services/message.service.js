@@ -1,3 +1,5 @@
+'use strict';
+
 angular.module('genealogia')
   .factory('messageService', function () {
     var messages = [];

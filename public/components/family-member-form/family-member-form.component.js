@@ -5,7 +5,7 @@ angular.module('genealogia')
   // register a component definition. a component can be seen as a stripped down version of a directive
   .component('familyMemberForm', {
     templateUrl: 'components/family-member-form/family-member-form.template.html',
-    controller:  ['$log', '$http', function ($log, $http) {
+    controller:  ['personService', '$log', function (personService, $log) {
       //RESET
       this.reset = function () {
         $log.debug('reset');
@@ -13,15 +13,8 @@ angular.module('genealogia')
       };
       //SAVE
       this.save = function () {
-        $http({
-          method: 'POST',
-          url: '/api/person',
-          data: this.data
-        }).then(function successCallback(response) {
-          $log('succes' + response);
-        }, function errorCallback(response) {
-          $log('erreur' + response);
-        });
+        let res = personService.create(this.date);
+        $log.log(res);
       };
     }],
     controllerAs: 'personForm'
