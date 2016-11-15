@@ -2,25 +2,48 @@
 
 angular.module('genealogia')
   .factory('messageService', function () {
-    var messages = [];
+    //private
+    let create = function (title, detail){
+      return {
+        title,
+        detail
+      };
+    };
 
-    var addMessage = function (message) {
+    let messages = [];
+
+    // public
+    let addMessage = function (message) {
       message.type = message.isError ? 'danger' : 'success';
       messages.push(message);
     };
 
-    var getMessages = function () {
+    let getMessages = function () {
       return messages;
     };
 
-    var closeMessage = function (index) {
+    let closeMessage = function (index) {
       messages.splice(index, 1);
+    };
+
+    let createMessage = function (title, detail) {
+      var msg = create(title, detail);
+      msg.isError = false;
+      return msg;
+    };
+
+    let createErrorMessage = function (title, detail) {
+      var msg = create(title, detail);
+      msg.isError = true;
+      return msg;
     };
 
     return {
       addMessage,
       getMessages,
-      closeMessage
+      closeMessage,
+      createMessage,
+      createErrorMessage
     };
 
   });

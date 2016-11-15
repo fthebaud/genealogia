@@ -8,7 +8,7 @@
                 <div class="panel-body">
 
                     <div uib-alert ng-repeat="message in loginCtrl.messages" ng-class="'alert-' + (message.type || 'warning')" close="loginCtrl.closeMessage($index)">
-                        {{message.title}}
+                        <strong>{{message.title}}</strong><br/>
                         {{message.detail}}
                     </div>
 

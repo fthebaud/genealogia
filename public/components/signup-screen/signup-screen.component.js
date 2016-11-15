@@ -6,7 +6,7 @@ angular.module('genealogia')
     controller: ['$location', 'accountService', 'messageService',
       function ($location, accountService, messageService) {
         this.submitted = false;
-        //Gestion de l'affichage des alertes sur création d'un nouveau compte
+        //Gestion de l'affichage des alertes sur creation d'un nouveau compte
         this.messages = messageService.getMessages();
         this.closeMessage = function (index) {
           messageService.closeMessage(index);
@@ -21,9 +21,6 @@ angular.module('genealogia')
             .then(function (message) {
               messageService.addMessage(message);
               $location.url('/login-screen');
-            })
-            .catch(function (message){
-              messageService.addMessage(message);
             });
           }
         };
