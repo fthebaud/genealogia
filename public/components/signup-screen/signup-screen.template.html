@@ -6,8 +6,7 @@
                     <h3 class="panel-title">Sign up</h3>
                 </div>
                 <div class="panel-body">
-
-                    <div uib-alert ng-repeat="message in loginCtrl.messages" ng-class="'alert-' + (message.type || 'warning')" close="loginCtrl.closeMessage($index)">
+                    <div uib-alert ng-repeat="message in signUpCtrl.messages" ng-class="'alert-' + (message.type || 'warning')" close="signUpCtrl.closeMessage($index)">
                         <strong>{{message.title}}</strong><br/>
                         {{message.detail}}
                     </div>

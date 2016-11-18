@@ -1,13 +1,13 @@
 'use strict';
 
-let ErrorMessage = require('../interface/errorMessage.js');
-
 function sendBackErrorOrResult(err, objects, response) {
   if (err) {
-    response.status(500).send(new ErrorMessage('error', err));
+    response.status(500).send(err);
+    return;
   }
   if (objects) {
     response.send(objects);
+    return;
   }
   response.status(404).send();
 }

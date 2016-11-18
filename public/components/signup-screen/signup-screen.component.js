@@ -18,9 +18,12 @@ angular.module('genealogia')
           // If the form is valid and the passwords are matching, we send a request to create a new account
           if (isValid && this.data.password1 === this.data.password2) {
             accountService.create(this.data)
-            .then(function (message) {
-              messageService.addMessage(message);
+            .then(response => {
+              messageService.createAndAddMessage(response.status, response.statusText, response.data);
               $location.url('/login-screen');
+            })
+            .catch(response => {
+              messageService.createAndAddMessage(response.status, response.statusText, response.data);
             });
           }
         };

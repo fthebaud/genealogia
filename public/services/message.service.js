@@ -2,19 +2,12 @@
 
 angular.module('genealogia')
   .factory('messageService', function () {
-    //private
-    let create = function (title, detail){
-      return {
-        title,
-        detail
-      };
-    };
-
     let messages = [];
 
     // public
     let addMessage = function (message) {
       message.type = message.isError ? 'danger' : 'success';
+      messages.length = 0; // pas plus d'un message à la fois ?
       messages.push(message);
     };
 
@@ -26,16 +19,17 @@ angular.module('genealogia')
       messages.splice(index, 1);
     };
 
-    let createMessage = function (title, detail) {
-      var msg = create(title, detail);
-      msg.isError = false;
-      return msg;
+    let createMessage = function (httpStatus, httpStatusText, text) {
+      return {
+        title: httpStatus === 200 ? 'Success!' : httpStatus + ' ' + httpStatusText,
+        detail: text,
+        isError: httpStatus !== 200
+      };
     };
 
-    let createErrorMessage = function (title, detail) {
-      var msg = create(title, detail);
-      msg.isError = true;
-      return msg;
+    let createAndAddMessage = function (httpStatus, httpStatusText, text) {
+      let msg = createMessage(httpStatus, httpStatusText, text);
+      addMessage(msg);
     };
 
     return {
@@ -43,7 +37,7 @@ angular.module('genealogia')
       getMessages,
       closeMessage,
       createMessage,
-      createErrorMessage
+      createAndAddMessage
     };
 
   });

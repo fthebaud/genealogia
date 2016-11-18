@@ -8,9 +8,6 @@ let Account = require('../models/account');
 let responseHelper = require('../modules/helpers/responseHelper');
 let passwordHelper = require('../modules/helpers/passwordHelper');
 
-let Message = require('../modules/interface/message');
-let ErrorMessage = require('../modules/interface/errorMessage');
-
 let express = require('express');
 
 
@@ -38,11 +35,11 @@ accountRouter.route('/')
         email: req.body.email
       }, function (err, account) {
         if (err) {
-          res.send(new ErrorMessage('error while checking if the account already exists', err));
+          res.send('error while checking if the account already exists: ' + err);
         }
         else {
           if (account) {
-            res.status(409).send(new ErrorMessage('Conflict: account already exists.'));
+            res.status(409).send('Conflict: account already exists.');
           }
           else {
             console.log('account creation: ', req.body);
@@ -53,13 +50,13 @@ accountRouter.route('/')
             u.hash = passwordData.passwordHash;
             u.salt = passwordData.salt;
             u.save(function (err) {
-              responseHelper.sendBackErrorOrResult(err, new Message('Account successfully created'), res);
+              responseHelper.sendBackErrorOrResult(err, 'Account successfully created', res);
             });
           }
         }
       });
     } else {
-        res.status(400).send(new ErrorMessage('login and/or password missing'));
+        res.status(400).send('login and/or password missing');
     }
   })
 
@@ -100,7 +97,7 @@ accountRouter.route('/:account_id')
     Account.remove({
       _id: req.params.account_id
     }, function (err) {
-      responseHelper.sendBackErrorOrResult(err, new Message('Account successfully deleted'), res);
+      responseHelper.sendBackErrorOrResult(err, 'Account successfully deleted', res);
     });
   });
 
