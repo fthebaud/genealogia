@@ -39,4 +39,7 @@ function saltHashPassword(accountPassword) {
   return sha512(accountPassword, salt);
 }
 
-exports.saltHashPassword = saltHashPassword;
+module.exports = {
+  saltHashPassword,
+  sha512
+};

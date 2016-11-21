@@ -18,10 +18,10 @@
                             Account successfully created.
                             </label>
                             <div class="form-group">
-                                <input class="form-control" name="email" placeholder="E-mail" type="email" required autofocus/>
+                                <input class="form-control" name="email" placeholder="E-mail" type="email" required autofocus ng-model="loginCtrl.data.email"/>
                             </div>
                             <div class="form-group">
-                                <input class="form-control" name="password" placeholder="Password" value="" type="password" required/>
+                                <input class="form-control" name="password" placeholder="Password" value="" type="password" required ng-model="loginCtrl.data.password"/>
                             </div>
 
                             <button type="submit" class="btn btn-success btn-block">Login</button>

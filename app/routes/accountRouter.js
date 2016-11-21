@@ -101,6 +101,43 @@ accountRouter.route('/:account_id')
     });
   });
 
+/**
+ *
+ * api/accounts/check
+ *
+ */
+ // [POST]
+ // Create one account
+ accountRouter.route('/check')
+ .post(function (req, res) {
+   if (req.body.email && req.body.password) {
+     Account.findOne({
+       email: req.body.email
+     }, function (err, account) {
+       if (err) {
+         res.send('error while checking if the account already exists: ' + err);
+       }
+       else {
+        if (account) {
+          let passwordHashDb = account.toObject().hash;
+          let salt = account.toObject().salt
+          let passwordHashUser = passwordHelper.sha512(req.body.password, salt).passwordHash;
+          if (passwordHashDb === passwordHashUser) {
+            //TODO construire et renvoyer un jwt
+            res.status(200).send('YES');
+          } else {
+            res.status(401).send('wrong login/password');
+          }
+        } else {
+            res.status(401).send('wrong login/password');
+        }
+       }
+     });
+   } else {
+       res.status(400).send('login and/or password missing');
+   }
+ })
+
 
 // export du router
 module.exports = accountRouter;

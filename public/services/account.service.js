@@ -8,7 +8,7 @@ angular.module('genealogia')
       function create(account) {
         return $http({
             method: 'POST',
-            url: '/api/accounts/yolo',
+            url: '/api/accounts/',
             headers: {
               'Content-Type': 'application/x-www-form-urlencoded'
             },
@@ -16,8 +16,20 @@ angular.module('genealogia')
           });
       }
 
+      function check(account) {
+        return $http({
+          method: 'POST',
+          url: '/api/accounts/check',
+          headers: {
+            'Content-Type': 'application/x-www-form-urlencoded'
+          },
+          data: $httpParamSerializer(account)
+        });
+      }
+
       return {
-        create
+        create,
+        check
       };
     }
   ]);
