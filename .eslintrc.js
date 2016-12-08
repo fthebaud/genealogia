@@ -5,7 +5,7 @@ module.exports = {
   // parser options
   parserOptions: {
     ecmaVersion: 6,
-    sourceType: 'modules'
+    sourceType: 'module'
   },
 
   // environments : define a set of global variables
